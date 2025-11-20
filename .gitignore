@@ -1,0 +1,53 @@
+# --- Environnement virtuel ---
+venv/
+.env/
+.venv/
+
+# --- Caches Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# --- Fichiers de logs ---
+*.log
+
+# --- Fichiers temporaires ---
+*.tmp
+*.temp
+*.cache
+
+# --- Config éditeurs ---
+.vscode/
+.idea/
+*.swp
+
+# --- Fichiers système ---
+.DS_Store
+Thumbs.db
+
+# --- Ressources Pygame générées automatiquement ---
+*.ogg~
+*.wav~
+*.png~
+*.jpg~
+*.mp3~
+
+# --- Build / distributions (si tu fais un exécutable) ---
+build/
+dist/
+*.spec
+
+# --- Jupyter Notebook checkpoints ---
+.ipynb_checkpoints/
+
+# --- Fichiers de tests ---
+.coverage
+htmlcov/
+.cache/
+pytest_cache/
+
+# --- Autres fichiers à ignorer selon tes besoins ---
+# docs/build/
+# secrets.json
