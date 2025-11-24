@@ -35,7 +35,7 @@
 ### **1. Cloner le projet**
 
 ```bash
-git clone <url-du-repo>
+git clone https://github.com/Mboget/python_project_EFREI_S1.git
 cd projet
 ```
 
