@@ -53,6 +53,7 @@ Python
  ├── README.md
  ├── TODO.md
  ├── faire_un_exe_propre.md
+ ├── .gitignore
 ```
 
 ---

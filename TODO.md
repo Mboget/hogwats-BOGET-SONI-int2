@@ -3,7 +3,7 @@
 ## 🔹 À faire (High Priority)
 | Tâche | Assigné à | Statut     | Date Limite | Date de réalisation |
 |-------|-----------|------------|-------------|---------------------|
-| faire chapter 1  | Mathieu       | ❌ Non fait | 03/12/25    | ../../..            |
+| faire chapter 1  | Mathieu       | ✅ Non fait | 03/12/25    | 30/11/25            |
 | faire chapter 2   | Kavi       | ❌ Non fait | 10/12/25    | ../../..            |
 | faire chapter 3  | Mathieu       | ❌ Non fait | 05/12/25    | ../../..            |
 | faire chapter 4  | Mathieu       | ❌ Non fait | 12/12/25    | ../../..            |
@@ -11,11 +11,11 @@
 |Trouver assets personnages harry potter | Kavi | ❌ Non fait | 05/12/25 | ../../.. 
 
 ## 🔹 À faire (Moyenne Priorité)
-| Tâche                  | Assigné à | Statut  | Date Limite | Date de réalisation |
-|------------------------|-----------|---------|-------------|---------------------|
-| faire class personnage | Mathieu   |✅ fait | 28/11/2025   | 28/11/2025         |
-| modifier le README.md  | Kavi      | ❌ Non fait | 03/12/25| ../../..           |
-| se renseigner sur le module pygame (interface graphique) | Kavi | ❌ Non fait | 05/12/25    | ../../..            |
+| Tâche                  | Assigné à |Fait par | Statut  | Date Limite | Date de réalisation |
+|------------------------|-----------|---------|---------|-------------|---------------------|
+| faire class personnage | Mathieu   | Mathieu   |✅ fait | 28/11/2025   | 28/11/2025         |
+| modifier le README.md  | Kavi      | Mathieu   | ✅ fait | 03/12/25| ../../..           |
+| se renseigner sur le module pygame (interface graphique) | Kavi | | ❌ Non fait | 05/12/25    | ../../..            |
 
 ## 🔹 Idées / Bonus
 | Tâche              | Assigné à | Statut     | Date Limite | Date de réalisation |
