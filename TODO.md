@@ -5,7 +5,7 @@
 |------------------------|-----------|---------|---------|-------------|---------------------|
 | faire chapter 1  | Mathieu       | Mathieu |✅ fait | 03/12/25    | 30/11/25            |
 | faire chapter 2   | Kavi       | ... |❌ Non fait | 10/12/25    | ../../..            |
-| faire chapter 3  | Mathieu       | Mathieu |✅ Non fait | 05/12/25    | ../../..            |
+| faire chapter 3  | Mathieu       | Mathieu |✅ Non fait | 05/12/25| 05/12/25|
 | faire chapter 4  | Mathieu       | ... |❌ Non fait | 12/12/25    | ../../..            |
 | faire chapter 5  | Kavi et Mathieu| ... |❌ Non fait | 21/12/25    | ../../..            |
 |Trouver assets personnages harry potter | Kavi | ... |❌ Non fait | 05/12/25 | ../../.. 
