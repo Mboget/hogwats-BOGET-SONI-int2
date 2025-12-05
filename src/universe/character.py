@@ -3,7 +3,7 @@ from src.universe.house import House
 from src.utils.input_utils import ask_choice
 
 class Character:
-    def __init__(self, last_name:str, first_name:str, attributes:dict, money = 100, inventory = [], spells = [], house = []):
+    def __init__(self, last_name:str, first_name:str, attributes:dict, money = 100, inventory = [], spells = [], house = House()):
         self.last_name = last_name
         self.first_name = first_name
         self.money = money

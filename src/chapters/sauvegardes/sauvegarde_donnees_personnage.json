@@ -1,13 +1,13 @@
 {
-    "Last name" : "..." ,
-    "First name" : "...",
-    "Money" : "...",
-    "Courage level" : "...",
-    "Ambition level" : "...",
-    "Loyalty level" : "...",
-    "Intelligence level" : "...",
+    "Last name" : "BOGET" ,
+    "First name" : "Mathieu",
+    "Money" : "100000000000000000000",
+    "Courage level" : "10",
+    "Ambition level" : "9",
+    "Loyalty level" : "10",
+    "Intelligence level" : "8",
     "Inventory" : [],
     "Spells" : [],
-    "House" : "..."
+    "House" : "Grynfondor"
 
 }

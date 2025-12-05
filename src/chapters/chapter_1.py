@@ -9,7 +9,8 @@ from src.utils.input_utils import load_file
 from src.utils.input_utils import bold
 from src.utils.input_utils import wait_for_enter
 from src.universe.character import Character
-import keyboard
+from src.universe.house import House
+from src.utils.input_utils import changer_statut_fichier_sauvegarde
 import os
 import json
 
@@ -30,6 +31,9 @@ def introduction():
     Returns:
         None
     """
+
+    changer_statut_fichier_sauvegarde("src/chapters/chapter_1",'introduction')
+
     # Introduction passage
     text = """
     Something strange lingers in the air today
@@ -68,6 +72,8 @@ def create_character()->Character:
     This function asks the user to input the character's last name, first name, and four attributes: courage, intelligence, loyalty, and ambition.
     It then creates a Character object with these attributes and displays the character's profile.
     """
+
+    changer_statut_fichier_sauvegarde("src/chapters/chapter_1",'create_character')
 
     # Ask for the character's last name
     last_name = ask_text("Enter your character's last name: ")
@@ -129,6 +135,9 @@ def receive_letter(character: Character):
     invitation to Hogwarts and, if they decline, ends the
     program.
     """
+
+    changer_statut_fichier_sauvegarde("src/chapters/chapter_1",'receive_letter')
+
     text = f"""
     An owl flies through the window, delivering a letter sealed with the Hogwarts crest...
     
@@ -160,6 +169,9 @@ def meet_hagrid(character:Character):
     This function simulates the process of meeting Hagrid and going shopping on Diagon Alley.
     It takes a Character object as an argument and modifies its attributes accordingly.
     """
+
+    changer_statut_fichier_sauvegarde("src/chapters/chapter_1",'meet_hagrid')
+
     texte = f"""
     Hagrid : "Hello {character.first_name}! I'm here to help you with your shopping on Diagon Alley."
              """
@@ -178,12 +190,15 @@ def meet_hagrid(character:Character):
         # Display a message to the user with Hagrid's dialogue
         affichage_lettre_par_lettre(texte)
 
+
 def buy_supplies(character:Character):
     """
     This function simulates the process of buying school supplies for Hogwarts.
     It takes a Character object as an argument and modifies its attributes accordingly.
     """
     
+    changer_statut_fichier_sauvegarde("src/chapters/chapter_1",'buy_supplies')
+
     contenu_diagon_alley =load_file("src/data/inventory.json")
     required_items = []
 
@@ -281,11 +296,11 @@ def start_chapter_1():
     # Check if the file exists at the given path.
     if not os.path.isfile("src/chapters/sauvegardes/sauvegarde_chapter_1.json"): 
         data = {
-            "1" : {"intro": False}, # type: ignore
-            "2" : {"creation_character": False}, # type: ignore
-            "3" : {"receiving letter": False}, # type: ignore
-            "4" : {"Meeting Hagrid": False} # type: ignore
-
+            "1" : {"introduction": False}, # type: ignore
+            "2" : {"create_character": False}, # type: ignore
+            "3" : {"receive_letter": False}, # type: ignore
+            "4" : {"meet_hagrid": False}, # type: ignore
+            "5" : {"buy_supplies": False} # type: ignore
         }
 
         with open("src/chapters/sauvegardes/sauvegarde_chapter_1.json","w",encoding="utf-8") as j1:
@@ -336,7 +351,7 @@ def start_chapter_1():
                 spells = donnees_personnage["Spells"]
                 house = donnees_personnage["House"]
 
-                perso_joueur = Character(last_name,first_name,mes_attribues,money,inventory,spells,house)
+                perso_joueur = Character(last_name,first_name,mes_attribues,money,inventory,spells,House(house))
 
             # Call the functions to start the chapter.
             receive_letter(perso_joueur)
