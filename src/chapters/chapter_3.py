@@ -7,6 +7,7 @@ from src.utils.input_utils import wait_for_enter
 from src.universe.character import Character
 from src.utils.input_utils import charger_personnage
 from src.utils.input_utils import changer_statut_fichier_sauvegarde
+from src.universe.house import display_winning_houses, House
 from random import randint, sample
 import json 
 import os
@@ -130,9 +131,12 @@ def start_chapter_3(perso:Character):
         case "learn_spells":
             learn_spells(perso)
             magic_quiz(perso)
-
+            display_winning_houses([House("Gryffindor"),House("Slytherin"),House("Hufflepuff"),House("Ravenclaw")])
+            perso.display_character()
         case "magic_quiz":
             magic_quiz(perso)
+            display_winning_houses([House("Gryffindor"),House("Slytherin"),House("Hufflepuff"),House("Ravenclaw")])
+            perso.display_character()
 
 if __name__ == '__main__':
 
