@@ -284,7 +284,7 @@ def buy_supplies(character:Character):
     attempt_choice_pet = ask_choice("Which pet do you want?",liste_pets)
 
     while pets[str(attempt_choice_pet+1)][1]> character.money: # type: ignore
-        affichage_lettre_par_lettre("Remenber you're broke brother... \nChoose an other pet.")
+        affichage_lettre_par_lettre("Remember you're broke brother... \nChoose an other pet.")
         attempt_choice_pet = ask_choice("Which pet do you want?",liste_pets)
 
     affichage_lettre_par_lettre(f"You chose : {pets[str(attempt_choice_pet+1)][0]} (-{pets[str(attempt_choice_pet+1)][1]} Galleons).") # type: ignore

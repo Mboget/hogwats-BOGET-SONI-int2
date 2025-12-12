@@ -8,61 +8,59 @@
 # Display of complete information about the player's character to summarize the end of the chapter: yes
 # Display of a message confirming the end of the chapter and announcing the start of classes at Hogwarts: yes
 
-from src.universe.character import Character
+from universe.character import display_character
 
-from src.utils.input_utils import load_file,ask_choice,affichage_lettre_par_lettre,charger_personnage
+from src.utils.input_utils import load_file,ask_choice
 
 print("journey to hogwarts: chapter 2")
 
 def meet_friends(character):
     print()
-    affichage_lettre_par_lettre("you board the train which is slowly departing northward...")
+    print("you board the train which is slowly departing northward...")
 
-    affichage_lettre_par_lettre("\n A red-haired boy enters your compartment, looking friendly.")
-    
-    choice = ask_choice("how do you respond?",["Sure have a seat","Sorry I prefer to travel alone."])
-
-    if choice == 0:
-        character.attributes['loyalty'] +=1
-        affichage_lettre_par_lettre("Ron smiles: Awesome! You'll see, Hogwarts is amazing!")
-
+    print("\n A red-haired boy enters your compartment, looking friendly.")
+    print("how do you respond? \n 1.Sure have a seat /n 2. Sorry I prefer to travel alone.")
+    choice=int(input("Your choice: "))
+    if choice == 1:
+        character['attributes']['loyalty'] +=1
+        print("Ron smiles: Awesome! You'll see, Hogwarts is amazing!")
     else:
-        character.attributes['ambition'] += 1
-        affichage_lettre_par_lettre("Ron shrugs and moves on")
+        character['attributes']['ambition'] += 1
+        print("Ron shrugs and moves on")
 
-    affichage_lettre_par_lettre("A girl enters next, already carrying a stack of books.")
-    affichage_lettre_par_lettre("— Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?")
-    choice = ask_choice("How do you respond?", ["Yes, I love learning new things!","Uh... no, I prefer adventures over books."])
-
-    if choice == 0:
-        affichage_lettre_par_lettre("Hermione smiles, impressed: — Oh, that's rare! You must be very clever!")
-        character.attributes['intelligence'] +=1
+    print("A girl enters next, already carrying a stack of books.")
+    print("— Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?")
+    print("How do you respond(write the corresponding integer? \n 1.Yes, I love learning new things! \n Uh... no, I prefer adventures over books.")
+    choice=int(input("Your choice: "))
+    if choice == 1:
+        print("Hermione smiles, impressed: — Oh, that's rare! You must be very clever!")
+        character['attributes']['intelligence'] +=1
     else:
-        affichage_lettre_par_lettre("Hermione looks disappointed and leaves")
-        character.attributes['courage'] += 1
+        print("Hermione looks disappointed and leaves")
+        character['attributes']['courage'] += 1
 
-    affichage_lettre_par_lettre("Then a blonde boy enters, looking arrogant.")
-    affichage_lettre_par_lettre("I'm Draco Malfoy. It's best to choose your friends carefully from the start, don't you think?")
-    choice = ask_choice("How do you respond?", ["Shake his hand politely.", "Ignore him completely.", "Respond with arrogance."])
-    
-    if choice == 0:
-        affichage_lettre_par_lettre("You are a good judge of character")
-        character.attributes['ambition'] += 1
-    elif choice == 1:
-        affichage_lettre_par_lettre("HOW DARE YOU IGNORE ME ! Father will be hearing about this")
-        character.attributes['loyalty'] +=1
+    print("\n Then a blonde boy enters, looking arrogant.")
+    print("I'm Draco Malfoy. It's best to choose your friends carefully from the start, don't you think?")
+    print("How do you respond? /n 1. Shake his hand politely. /n 2. Ignore him completely. /n 3. Respond with arrogance.")
+    choice=int(input("Your choice: "))
+    if choice == 1:
+        print("You are a good judge of character")
+        character['attributes']['ambition'] += 1
+    elif choice == 2:
+        print("HOW DARE YOU IGNORE ME ! Father will be hearing about this")
+        character['attributes']['loyalty'] +=1
     else:
-        character.attributes['courage'] += 1
-        affichage_lettre_par_lettre("You will regret this!")
+        character['attributes']['courage'] += 1
+        print("You will regret this!")
 
 
-    affichage_lettre_par_lettre("Your updated attributes are:")
-    for attr, value in character.attributes.items():
+    print("\n Your updated attributes are:")
+    for attr, value in character['Attributes'].items():
         print(f" - {attr}: {value}")
 
 
 # Sorting ceremony:
-def sorting(character):
+def sorting(character, questions):
     questions = [
         (
             "You see a friend in danger. What do you do?",
@@ -80,8 +78,8 @@ def sorting(character):
             ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
         )
     ]
-    affichage_lettre_par_lettre("The sorting ceremony begins in the Great Hall...")
-    affichage_lettre_par_lettre("The Sorting Hat observes you for a long time before asking its questions:")
+    print("\nThe sorting ceremony begins in the Great Hall...")
+    print("The Sorting Hat observes you for a long time before asking its questions:")
 
 
     house_scores = {
@@ -102,11 +100,13 @@ def sorting(character):
 
     for question_text, options, house_assignments in questions:
 
-        chosen_index = ask_choice(question_text, options)
-        assigned_house = house_assignments[chosen_index] # type: ignore
+        chosen_option = ask_choice(question_text, options)
+
+        chosen_index = options.index(chosen_option)
+        assigned_house = house_assignments[chosen_index]
         house_scores[assigned_house] += 3
 
-    print("\nSummary of scores:")
+        print("\nSummary of scores:")
     for house, score in house_scores.items():
         print(f"{house}: {score} points")
 
@@ -120,9 +120,9 @@ def sorting(character):
 
 def enter_common_room(character):
     print("\nYou follow the prefects through the castle corridors...")
-    houses_data = load_file("src/data/houses.json")
+    houses_data = load_file("../data/houses.json")
 
-    player_house = character.house.nom
+    player_house = character.get('House')
 
     if player_house and player_house in houses_data:
         house_info = houses_data[player_house]
@@ -147,21 +147,8 @@ def welcome_message():
     print("Now, let the feast begin and the Sorting Ceremony commence!")
     input()
 
-def start_chapter_2(character):
-
-    meet_friends(character)
-    welcome_message()
-    sorting(character)
-    enter_common_room(character)
-
-    #end of ch 2
-    print(f"End of ch 2 {character.house.nom} student")
-    print("="*50)
-
-    character.display_character()
-    print("\nEnd of Chapter 2! Classes begin tomorrow. Your adventure continues...")
-
-
-if __name__ == "__main__":
-    perso = charger_personnage()
-    start_chapter_2(perso)
+#end of ch 2
+print(f"End of ch 2 {character['House']} student")
+print("="*50)
+display_character(character)
+print("\nEnd of Chapter 2! Classes begin tomorrow. Your adventure continues...")

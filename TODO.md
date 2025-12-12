@@ -1,15 +1,15 @@
 # TODO - Mon Projet :
 
 ## 🔹 À faire (High Priority)
-| Tâche                  | Assigné à |Fait par | Statut  | Date Limite | Date de réalisation |
-|------------------------|-----------|---------|---------|-------------|---------------------|
-| faire chapter 1  | Mathieu       | Mathieu |✅ fait | 03/12/25    | 30/11/25            |
-| faire chapter 2   | Kavi       | ... |❌ Non fait | 10/12/25    | ../../..            |
-| faire chapter 3  | Mathieu       | Mathieu |✅ Non fait | 05/12/25| 05/12/25|
-| faire chapter 4  | Mathieu       | ... |❌ Non fait | 12/12/25    | ../../..            |
-| faire chapter 5  | Kavi et Mathieu| ... |❌ Non fait | 21/12/25    | ../../..            |
-|Trouver assets personnages harry potter | Kavi | ... |❌ Non fait | 05/12/25 | ../../.. |
-|Faire menu.y | Mathieu | ... |❌ Non fait | 10/12/25 | ../../.. |
+| Tâche                  | Assigné à       |Fait par | Statut  | Date Limite | Date de réalisation |
+|------------------------|-----------------|---------|---------|-------------|---------------------|
+| faire chapter 1  | Mathieu         | Mathieu |✅ fait | 03/12/25    | 30/11/25            |
+| faire chapter 2   | Kavi            | ... |❌ Non fait | 10/12/25    | ../../..            |
+| faire chapter 3  | Mathieu         | Mathieu |✅ Non fait | 05/12/25| 05/12/25|
+| faire chapter 4  | kavi            | ... |❌ Non fait | 12/12/25    | ../../..            |
+| faire chapter 5  | Kavi et Mathieu | ... |❌ Non fait | 21/12/25    | ../../..            |
+|Trouver assets personnages harry potter | Kavi            | ... |❌ Non fait | 05/12/25 | ../../.. |
+|Faire menu.y | Mathieu         | ... |❌ Non fait | 10/12/25 | ../../.. |
 
 ## 🔹 À faire (Moyenne Priorité)
 | Tâche                  | Assigné à |Fait par | Statut  | Date Limite | Date de réalisation |
