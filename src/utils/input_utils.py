@@ -7,7 +7,7 @@ import sys
 
 def affichage_lettre_par_lettre(texte,speed=0.1,end='\n'):
     for letter in texte:
-        print(letter, end='', flush=True)
+        print(letter, end='', flush=True) #Flush in coding refers to emptying the data buffer to ensure immediate output. flush=True in print( ) forces the buffer to clear immediately
         time.sleep(speed)
     print(end)
 
@@ -19,7 +19,7 @@ def affichage_lettre_par_lettre_avec_input(texte,speed=0.01):
 
     return user_input
 
-def changer_statut_fichier_sauvegarde(file_path,nom_fonction):
+def changer_statut_fichier_sauvegarde(file_path,nom_fonction):  #
     
     try : 
         with open(file_path,'r',encoding='utf-8'):
@@ -27,7 +27,7 @@ def changer_statut_fichier_sauvegarde(file_path,nom_fonction):
 
         content[nom_fonction] = True
 
-        with open(file_path,'w',encoding='utf-8'):
+        with open(file_path,'w',encoding='utf-8'): # represents characters in one-, two-, three-, or four-byte units. Python uses UTF-8 by default
             json.dump(content,file_path,ensure_ascii=False,indent=4)
     except FileNotFoundError:
         return('Error : file not found')
@@ -64,7 +64,7 @@ def wait_for_enter():
             tty.setraw(fd)  # mode brut, rien n'est affiché
             while True:
                 ch = sys.stdin.read(1)
-                if ch == '\r' or ch == '\n':  # Enter sur Unix
+                if ch == '\r' or ch == '\n':  h# Enter sur Unix
                     print()
                     return
                 # On ignore toutes les autres touches
